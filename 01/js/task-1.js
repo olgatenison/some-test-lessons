@@ -78,8 +78,6 @@ if (randomNumber < 20){
     Условную конструкцию из задания 4, перепишите с помощью Switch Case
 */
 
-let randomNumber = Math.floor(Math.random() * 100);
-
 switch (true) {
     case (randomNumber < 20):
         console.log("randomNumber меньше 20");
