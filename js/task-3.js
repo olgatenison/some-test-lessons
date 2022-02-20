@@ -33,6 +33,7 @@ tabs.addEventListener('click', e => {
     Количество вкладок: 2. 
     Контент внутри - на ваш вкус 
 */
+
 const changeSecondClass = (el)=> {
     for (let i = 0; i < tabsSecond.children.length; i++) {
         tabsSecond.children[i].classList.remove('activeSecond');
@@ -41,13 +42,16 @@ const changeSecondClass = (el)=> {
 }
 
 tabsSecond.addEventListener('click', e => {
-    const currTabSecond = e.target.dataset.btnSecond;  
-    changeSecondClass(e.target);
+    
+    const currSecondTab = e.target.dataset.btnSecond;
+    console.log(e)  
 
+    changeSecondClass(e.target);
     for (let i = 0; i < contentSecond.length; i++) {
-        contentSecond[i].classList.remove('activeSecond');
-        if(contentSecond[i].dataset.contentSecond === currTabSecond ) {
-            contentSecond[i].classList.add('activeSecond');
+        contentSecond[i].style.display = 'none';
+
+        if(contentSecond[i].dataset.contentSecond === currSecondTab) {
+           contentSecond[i].style.display = 'block';
         }
     }
 })

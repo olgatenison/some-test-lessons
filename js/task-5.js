@@ -55,16 +55,6 @@ dots.forEach((item, indexDot) =>{
     })
 });
 
-
 next.addEventListener('click', nextSlide);
 prev.addEventListener('click', prevSlide);
 
-/* 
-    Задание 1:
-
-    Доделать слайдер с урока
-
-    1. Переписать код слайдера с урока по видео
-    2. Доделать автоматическое переключение слайдов с интвервалом в 2 секунды
-
-*/
