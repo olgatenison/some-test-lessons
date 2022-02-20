@@ -2,6 +2,9 @@
 const tabs = document.getElementById('tabs');
 const content = document.querySelectorAll('.content');
 
+const tabsSecond = document.getElementById('second-tabs');
+const contentSecond = document.querySelectorAll('.second-content');
+
 console.log(tabs);
 console.log(tabs.children);
 
@@ -26,10 +29,25 @@ tabs.addEventListener('click', e => {
 
 /* 
     Задание 2:
-
-    Доделать tabs с урока
-
-    1. Переписать код tabs с урока по видео
-    2. Внутри третьей вкладки добавить функционал табов. Количество вкладок: 2. Контент внутри - на ваш вкус 
-
+    Внутри третьей вкладки добавить функционал табов. 
+    Количество вкладок: 2. 
+    Контент внутри - на ваш вкус 
 */
+const changeSecondClass = (el)=> {
+    for (let i = 0; i < tabsSecond.children.length; i++) {
+        tabsSecond.children[i].classList.remove('activeSecond');
+    }
+    el.classList.add('activeSecond');
+}
+
+tabsSecond.addEventListener('click', e => {
+    const currTabSecond = e.target.dataset.btnSecond;  
+    changeSecondClass(e.target);
+
+    for (let i = 0; i < contentSecond.length; i++) {
+        contentSecond[i].classList.remove('activeSecond');
+        if(contentSecond[i].dataset.contentSecond === currTabSecond ) {
+            contentSecond[i].classList.add('activeSecond');
+        }
+    }
+})

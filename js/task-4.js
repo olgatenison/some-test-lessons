@@ -7,7 +7,7 @@ const overlay = document.getElementById('overlay');
 const btnClose = document.getElementById('btn-close');
 
 btnOpen.addEventListener ('click', () => {
- modal.classList.add('active');
+    modal.classList.add('active');
 });
 
 const closeModal = () => {

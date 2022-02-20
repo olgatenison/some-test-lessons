@@ -24,6 +24,7 @@ const prepareCurrentSlide = ind => {
     activeSlide(index);
     activeDot(index);
 }
+
 const nextSlide = () => {
     if(index == slides.length -1) {
         index = 0;
@@ -34,6 +35,8 @@ const nextSlide = () => {
         prepareCurrentSlide(index);
     }
 }
+
+const autoSwipe = setInterval(nextSlide, 2000);
 
 const prevSlide = () => {
     if(index == 0) {
@@ -51,6 +54,7 @@ dots.forEach((item, indexDot) =>{
         prepareCurrentSlide(index);
     })
 });
+
 
 next.addEventListener('click', nextSlide);
 prev.addEventListener('click', prevSlide);
